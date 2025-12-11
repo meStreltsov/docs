@@ -10,20 +10,35 @@
       {
         "language": "en",
         "pages": [
-          "en/index"
+          "en/index",
+          "en/privacy-policy",
+          "en/terms-of-use",
+          "en/faq",
+          "en/technical-docs",
+          "en/contacts"
         ]
       },
       {
         "language": "ru",
         "default": true,
         "pages": [
-          "index"
+          "ru/index",
+          "ru/privacy-policy",
+          "ru/terms-of-use",
+          "ru/faq",
+          "ru/technical-docs",
+          "ru/contacts"
         ]
       },
       {
         "language": "zh",
         "pages": [
-          "zh/index"
+          "zh/index",
+          "zh/privacy-policy",
+          "zh/terms-of-use",
+          "zh/faq",
+          "zh/technical-docs",
+          "zh/contacts"
         ]
       }
     ]
