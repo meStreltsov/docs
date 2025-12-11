@@ -8,48 +8,40 @@
   "navigation": {
     "languages": [
       {
-  "language": "en",
-  "pages": [
-    "en/index",
-    "en/privacy-policy",
-    "en/terms-of-use",
-
-    {
-      "group": "FAQ",
-      "pages": [
-   "zh/faq/how-to-buy-or-get-a-server",
-   "zh/faq/adding-configuration-subscription",
-   "zh/faq/share-configuration",
-   "zh/faq/local-network-connections",
-   "zh/faq/android-tv",
-   "zh/faq/apple-tv-tvos",
-   "zh/faq/ping",
-   "zh/faq/errors/index",
-   "zh/faq/errors/windows-update"
-]
-
-    },
-
-    {
-      "pages": [
-   "zh/dev-docs/crypto-link",
-   "zh/dev-docs/app-management",
-   "zh/dev-docs/provider-id",
-   "zh/dev-docs/routing",
-   "zh/dev-docs/displaying-flags-and-smileys",
-   "zh/dev-docs/examples-of-links-and-parameters",
-   "zh/dev-docs/hwid-links",
-   "zh/dev-docs/limited-links",
-   "zh/dev-docs/ping",
-   "zh/dev-docs/android-tv-api"
-]
-
-    },
-
-    "en/contacts"
-  ]
-}
-      ,
+        "language": "en",
+        "pages": [
+          "en/index",
+          "en/privacy-policy",
+          "en/terms-of-use",
+          {
+            "group": "FAQ",
+            "pages": [
+              "zh/faq/how-to-buy-or-get-a-server",
+              "zh/faq/adding-configuration-subscription",
+              "zh/faq/share-configuration",
+              "zh/faq/local-network-connections",
+              "zh/faq/android-tv",
+              "zh/faq/apple-tv-tvos",
+              "zh/faq/ping",
+              "zh/faq/errors/index",
+              "zh/faq/errors/windows-update"
+            ]
+          },
+          {
+            "pages": [
+              "zh/dev-docs/crypto-link",
+              "zh/dev-docs/app-management",
+              "zh/dev-docs/provider-id",
+              "zh/dev-docs/routing",
+              "zh/dev-docs/displaying-flags-and-smileys",
+              "zh/dev-docs/examples-of-links-and-parameters",
+              "zh/dev-docs/hwid-links",
+              "zh/dev-docs/android-tv-api"
+            ]
+          },
+          "en/contacts"
+        ]
+      },
       {
         "language": "ru",
         "default": true,
@@ -57,7 +49,6 @@
           "ru/index",
           "ru/privacy-policy",
           "ru/terms-of-use",
-
           {
             "group": "FAQ",
             "pages": [
@@ -72,33 +63,29 @@
               "ru/faq/errors/windows-update"
             ]
           },
-
           {
-  "group": "Техническая документация",
-  "pages": [
-    "ru/technical-docs/encrypted-link",
-    "ru/technical-docs/limited-links",
-    "ru/technical-docs/hwid-links",
-    "ru/technical-docs/app-management",
-    "ru/technical-docs/provider-id",
-    "ru/technical-docs/routing",
-    "ru/technical-docs/emoji",
-    "ru/technical-docs/examples-of-links-and-parameters",
-    "ru/technical-docs/android-tv-api"
-  ]
-}
-,
-
+            "group": "Техническая документация",
+            "pages": [
+              "ru/technical-docs/encrypted-link",
+              "ru/technical-docs/limited-links",
+              "ru/technical-docs/hwid-links",
+              "ru/technical-docs/app-management",
+              "ru/technical-docs/provider-id",
+              "ru/technical-docs/routing",
+              "ru/technical-docs/emoji",
+              "ru/technical-docs/examples-of-links-and-parameters",
+              "ru/technical-docs/android-tv-api"
+            ]
+          },
           "ru/contacts"
         ]
       },
-           {
+      {
         "language": "zh",
         "pages": [
           "zh/index",
           "zh/privacy-policy",
           "zh/terms-of-use",
-
           {
             "group": "FAQ",
             "pages": [
@@ -113,27 +100,23 @@
               "zh/faq/errors/windows-update"
             ]
           },
-
           {
-            "group": "开发者文档",
-            "pages": [
-              "zh/dev-docs/crypto-link",
-              "zh/dev-docs/app-management",
-              "zh/dev-docs/provider-id",
-              "zh/dev-docs/routing",
-              "zh/dev-docs/displaying-flags-and-smileys",
-              "zh/dev-docs/examples-of-links-and-parameters",
-              "zh/dev-docs/hwid-links",
-              "zh/dev-docs/limited-links",
-              "zh/dev-docs/ping",
-              "zh/dev-docs/android-tv-api"
-            ]
-          },
-
+  "group": "开发者文档",
+  "pages": [
+    "zh/dev-docs/crypto-link",
+    "zh/dev-docs/app-management",
+    "zh/dev-docs/provider-id",
+    "zh/dev-docs/routing",
+    "zh/dev-docs/displaying-flags-and-smileys",
+    "zh/dev-docs/examples-of-links-and-parameters",
+    "zh/dev-docs/hwid-links",
+    "zh/dev-docs/android-tv-api"
+  ]
+}
+,
           "zh/contacts"
         ]
       }
-
     ]
   }
 }
