@@ -42,12 +42,20 @@
           },
 
           {
-            "group": "Техническая документация",
-            "pages": [
-              "ru/technical-docs",
-              "ru/crypto-link"
-            ]
-          },
+  "group": "Техническая документация",
+  "pages": [
+    "ru/technical-docs/encrypted-link",
+    "ru/technical-docs/limited-links",
+    "ru/technical-docs/hwid-links",
+    "ru/technical-docs/app-management",
+    "ru/technical-docs/provider-id",
+    "ru/technical-docs/routing",
+    "ru/technical-docs/emoji",
+    "ru/technical-docs/examples-of-links-and-parameters",
+    "ru/technical-docs/android-tv-api"
+  ]
+}
+,
 
           "ru/contacts"
         ]
