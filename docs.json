@@ -17,7 +17,6 @@
     {
       "group": "FAQ",
       "pages": [
-        "en/faq/index",
         "en/faq/how-to-buy-or-get-a-server",
         "en/faq/adding-configuration-subscription",
         "en/faq/share-configuration",
@@ -33,7 +32,6 @@
     {
       "group": "Developer Documentation",
       "pages": [
-        "en/dev-docs/index",
         "en/dev-docs/crypto-link",
         "en/dev-docs/limited-links",
         "en/dev-docs/hwid-links",
