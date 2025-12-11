@@ -17,7 +17,8 @@
           "en/technical-docs",
           "en/contacts"
         ]
-      },
+      }
+      ,
       {
         "language": "ru",
         "default": true,
