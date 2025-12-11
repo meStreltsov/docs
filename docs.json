@@ -19,16 +19,47 @@
         ]
       },
       {
-        "language": "ru",
-        "default": true,
-        "pages": [
-          "ru/index",
-          "ru/privacy-policy",
-          "ru/terms-of-use",
-          "ru/faq",
-          "ru/technical-docs",
-          "ru/contacts"
-        ]
+  "language": "ru",
+  "default": true,
+  "pages": [
+    "ru/index",
+    "ru/privacy-policy",
+    "ru/terms-of-use",
+
+    {
+      "group": "FAQ",
+      "pages": [
+        "ru/faq/index",
+        "ru/faq/how-to-buy-or-get-a-server",
+        "ru/faq/adding-configuration-subscription",
+        "ru/faq/share-configuration",
+        "ru/faq/local-network-connections",
+        "ru/faq/android-tv",
+        "ru/faq/apple-tv-tvos",
+        "ru/faq/ping",
+        "ru/faq/errors",
+        "ru/faq/errors/windows-update"
+      ]
+    },
+
+    {
+      "group": "Техническая документация",
+      "pages": [
+        "ru/dev-docs/index",
+        "ru/dev-docs/crypto-link",
+        "ru/dev-docs/limited-links",
+        "ru/dev-docs/hwid-links",
+        "ru/dev-docs/app-management",
+        "ru/dev-docs/provider-id",
+        "ru/dev-docs/routing",
+        "ru/dev-docs/emoji",
+        "ru/dev-docs/examples-of-links-and-parameters",
+        "ru/dev-docs/android-tv-api"
+      ]
+    },
+
+    "ru/contacts"
+  ]
       },
       {
         "language": "zh",
