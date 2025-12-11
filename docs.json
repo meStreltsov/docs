@@ -58,7 +58,6 @@
               "ru/faq/android-tv",
               "ru/faq/apple-tv-tvos",
               "ru/faq/ping",
-              "ru/faq/errors",
               "ru/faq/errors/windows-update"
             ]
           },
@@ -100,18 +99,17 @@
             ]
           },
           {
-  "group": "开发者文档",
-  "pages": [
-    "zh/dev-docs/crypto-link",
-    "zh/dev-docs/app-management",
-    "zh/dev-docs/provider-id",
-    "zh/dev-docs/routing",
-    "zh/dev-docs/displaying-flags-and-smileys",
-    "zh/dev-docs/examples-of-links-and-parameters",
-    "zh/dev-docs/android-tv-api"
-  ]
-}
-,
+            "group": "开发者文档",
+            "pages": [
+              "zh/dev-docs/crypto-link",
+              "zh/dev-docs/app-management",
+              "zh/dev-docs/provider-id",
+              "zh/dev-docs/routing",
+              "zh/dev-docs/displaying-flags-and-smileys",
+              "zh/dev-docs/examples-of-links-and-parameters",
+              "zh/dev-docs/android-tv-api"
+            ]
+          },
           "zh/contacts"
         ]
       }
