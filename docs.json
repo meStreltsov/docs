@@ -9,13 +9,13 @@
     "languages": [
       {
         "language": "en",
-        "default": true,
         "pages": [
           "index"
         ]
       },
       {
         "language": "ru",
+        "default": true,
         "pages": [
           "ru/index"
         ]
