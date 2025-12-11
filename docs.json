@@ -10,14 +10,14 @@
       {
         "language": "en",
         "pages": [
-          "index"
+          "en/index"
         ]
       },
       {
         "language": "ru",
         "default": true,
         "pages": [
-          "ru/index"
+          "index"
         ]
       },
       {
