@@ -27,7 +27,7 @@
               "zh/faq/errors/windows-update"
             ]
           },
-          {
+          {"group": "dev-docs",
             "pages": [
               "zh/dev-docs/crypto-link",
               "zh/dev-docs/app-management",
