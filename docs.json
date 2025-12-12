@@ -27,7 +27,7 @@
               "en/faq/errors/windows-update"
             ]
           },
-          {"group": "dev-docs",
+          {"group": "Developer Documentation",
             "pages": [
               "en/dev-docs/crypto-link",
               "en/dev-docs/app-management",
