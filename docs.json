@@ -16,26 +16,26 @@
           {
             "group": "FAQ",
             "pages": [
-              "zh/faq/how-to-buy-or-get-a-server",
-              "zh/faq/adding-configuration-subscription",
-              "zh/faq/share-configuration",
-              "zh/faq/local-network-connections",
-              "zh/faq/android-tv",
-              "zh/faq/apple-tv-tvos",
-              "zh/faq/ping",
-              "zh/faq/errors/index",
-              "zh/faq/errors/windows-update"
+              "en/faq/how-to-buy-or-get-a-server",
+              "en/faq/adding-configuration-subscription",
+              "en/faq/share-configuration",
+              "en/faq/local-network-connections",
+              "en/faq/android-tv",
+              "en/faq/apple-tv-tvos",
+              "en/faq/ping",
+              "en/faq/errors/index",
+              "en/faq/errors/windows-update"
             ]
           },
           {"group": "dev-docs",
             "pages": [
-              "zh/dev-docs/crypto-link",
-              "zh/dev-docs/app-management",
-              "zh/dev-docs/provider-id",
-              "zh/dev-docs/routing",
-              "zh/dev-docs/displaying-flags-and-smileys",
-              "zh/dev-docs/examples-of-links-and-parameters",
-              "zh/dev-docs/android-tv-api"
+              "en/dev-docs/crypto-link",
+              "en/dev-docs/app-management",
+              "en/dev-docs/provider-id",
+              "en/dev-docs/routing",
+              "en/dev-docs/displaying-flags-and-smileys",
+              "en/dev-docs/examples-of-links-and-parameters",
+              "en/dev-docs/android-tv-api"
             ]
           },
           "en/contacts"
