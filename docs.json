@@ -50,6 +50,7 @@
           "ru/terms-of-use",
           {
             "group": "FAQ",
+            "expanded": false,
             "pages": [
               "ru/faq/how-to-buy-or-get-a-server",
               "ru/faq/adding-configuration-subscription",
@@ -64,6 +65,7 @@
           },
           {
             "group": "Техническая документация",
+            "expanded": false,
             "pages": [
               "ru/technical-docs/encrypted-link",
               "ru/technical-docs/limited-links",
