@@ -45,40 +45,40 @@
         "language": "ru",
         "default": true,
         "pages": [
-          "ru/index",
-          "ru/privacy-policy",
-          "ru/terms-of-use",
+          "/index",
+          "/privacy-policy",
+          "/terms-of-use",
           {
             "group": "FAQ",
             "expanded": false,
             "pages": [
-              "ru/faq/how-to-buy-or-get-a-server",
-              "ru/faq/adding-configuration-subscription",
-              "ru/faq/share-configuration",
-              "ru/faq/local-network-connections",
-              "ru/faq/android-tv",
-              "ru/faq/apple-tv-tvos",
-              "ru/faq/ping",
-              "ru/faq/errors",
-              "ru/faq/errors/windows-update"
+              "/faq/how-to-buy-or-get-a-server",
+              "/faq/adding-configuration-subscription",
+              "/faq/share-configuration",
+              "/faq/local-network-connections",
+              "/faq/android-tv",
+              "/faq/apple-tv-tvos",
+              "/faq/ping",
+              "/faq/errors",
+              "/faq/errors/windows-update"
             ]
           },
           {
             "group": "Техническая документация",
             "expanded": false,
             "pages": [
-              "ru/technical-docs/encrypted-link",
-              "ru/technical-docs/limited-links",
-              "ru/technical-docs/hwid-links",
-              "ru/technical-docs/app-management",
-              "ru/technical-docs/provider-id",
-              "ru/technical-docs/routing",
-              "ru/technical-docs/emoji",
-              "ru/technical-docs/examples-of-links-and-parameters",
-              "ru/technical-docs/android-tv-api"
+              "/technical-docs/encrypted-link",
+              "/technical-docs/limited-links",
+              "/technical-docs/hwid-links",
+              "/technical-docs/app-management",
+              "/technical-docs/provider-id",
+              "/technical-docs/routing",
+              "/technical-docs/emoji",
+              "/technical-docs/examples-of-links-and-parameters",
+              "/technical-docs/android-tv-api"
             ]
           },
-          "ru/contacts"
+          "/contacts"
         ]
       },
       {
