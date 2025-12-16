@@ -2,6 +2,15 @@
 title: "Limited Links"
 ---
 
+<Frame>
+  <img
+    src="/images/lim.png"
+    alt="Описание картинки"
+    style={{ width:"150px",height:"auto" }}
+    className="rounded-xl"
+  />
+</Frame>
+
 Limited links is a feature that allows you to restrict the number of devices that can add a subscription (link) to the application. In your personal account on the `happ-proxy.com` website, you specify your subscription URL, set the maximum number of devices, and click "Generate link." The resulting link can be shared with a user, and you can be confident that the subscription can only be installed on the specified number of devices — exceeding the limit is impossible.
 
 You can create limited links both through the web interface and via API.
@@ -15,7 +24,6 @@ You can create limited links both through the web interface and via API.
    - The link domain is stored in the database as a **SHA-256 hash** (raw domains are not stored to enhance security).
 
 You will receive an **encrypted link** with the InstallID parameter.
-
 
 **Creating via API**
 
