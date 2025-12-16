@@ -3,8 +3,8 @@
   "theme": "mint",
   "name": "Happ",
   "logo": {
-    "light": "/images/logo.png",
-    "dark": "/images/logo.png"
+    "light": "/images/logohapp.png",
+    "dark": "/images/logohapp.png"
   },
   "favicon": "/images/favicon.png",
   "colors": {
