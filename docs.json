@@ -35,14 +35,14 @@
           {"group": "Developer Documentation",
             "pages": [
               "en/dev-docs/crypto-link",
-              "en/dev-docs/technical-docs/limited-links",
-              "en/dev-docs/technical-docs/hwid-links",
+              "en/dev-docs/limited-links",
+              "en/dev-docs/hwid-links",
               "en/dev-docs/app-management",
               "en/dev-docs/provider-id",
               "en/dev-docs/routing",
               "en/dev-docs/displaying-flags-and-smileys",
               "en/dev-docs/examples-of-links-and-parameters",
-              "en/faq/ping",
+              "en/dev-docs/ping",
               "en/dev-docs/android-tv-api"
             ]
           },
