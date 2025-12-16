@@ -23,17 +23,17 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    A task is created in the system to perform the operation at the specified interval. Depending on internal priorities, the system tries to run the subscription update at the set time. If for any reason the update was not performed within the specified interval, it will occur automatically on the next app launch. The interval is set in hours and must be a multiple of one hour.
+    在系统中创建定时任务。根据系统内部优先级，系统会尝试在设定时间启动订阅更新。如果因任何原因未在指定时间间隔内执行更新，则会在下次启动应用时自动执行。时间间隔以小时为单位，必须是 1 小时的倍数。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     profile-update-interval: [int]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -44,7 +44,7 @@ title: "应用管理"
     profile-update-interval: 1
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #profile-update-interval: 1
@@ -61,19 +61,19 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    The name of the subscription profile. Can be passed as plain text or base64 (UTF-8). **Restriction:** Maximum length — 25 characters.
+    订阅配置文件名称。可以是纯文本或 base64（UTF-8）。**限制**：最大长度为 25 个字符。
 
-    In the subscription body, specify the parameter with a # (e.g., #profile-title)
+    通过订阅内容传递时，在参数前添加 # 符号（例如 #profile-title）
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     profile-title: [string]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -84,7 +84,7 @@ title: "应用管理"
     profile-title: Name VPN
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #profile-title: Name VPN
@@ -101,17 +101,17 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    Displays information about balance, used traffic volume, and subscription expiration date. On the left side of the scale in the app, the amount of used traffic (upload + download) is shown, and on the right — the total volume (total) after the "/" symbol. The subscription expiration date is specified in the **expire** parameter. **Note:** all data is transmitted in one header and separated by the **;** symbol.
+    显示订阅的余额、已使用流量和有效期。在应用中，刻度尺左侧显示已使用流量（上传 + 下载），右侧显示“/”符号后的总流量。订阅到期日期在 **expire** 参数中指定。**注意**：所有数据在一个标头中传递，并以 **;** 符号分隔。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     subscription-userinfo: [string]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -122,10 +122,10 @@ title: "应用管理"
     subscription-userinfo: upload=0; download=2153701362; total=0; expire=1790951622
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
-    #subscription-userinfo: upload=0; download=2153701362; total=0; expire=1790951622
+    №subscription-userinfo: upload=0; download=2153701362; total=0; expire=1790951622
     vless://70cc48c5‑b2f4…
     vmess://zkIAU1JitkI…
     ```
@@ -139,17 +139,17 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    A button to go to the support page. Displayed as a blue icon on the right. If the link leads to Telegram, a Telegram icon is shown; otherwise, a standard link icon is used.
+    跳转到支持页面的按钮。显示为位于行右侧的蓝色图标。如果链接指向 Telegram，则显示 Telegram 图标；其他情况使用标准链接图标。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     support-url: [string]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -160,7 +160,7 @@ title: "应用管理"
     support-url: https://t.me/happ_chat
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #support-url: https://t.me/happ_chat
@@ -177,17 +177,17 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    A button to go to the subscription website. Displayed as a blue icon on the left. If the parameter is not set, the icon will be gray.
+    跳转到订阅网站页面的按钮。显示为位于行左侧的蓝色图标。如果未设置参数，图标将为灰色。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     profile-web-page-url: [string]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -198,7 +198,7 @@ title: "应用管理"
     profile-web-page-url: https://happ.su
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #profile-web-page-url: https://happ.su
@@ -215,17 +215,17 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    The subscription can contain an announcement message, passed as plain text or Base64. Restriction: maximum length of displayed text — 200 characters.
+    订阅可以包含以 **纯文本** 或 **Base64** 格式传递的公告文本。**限制**：显示文本的最大长度为 **200 个字符**。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     announce: [string]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -236,7 +236,7 @@ title: "应用管理"
     announce: base64:SGFwcCB0aGUgYmVzdCE=
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #announce: base64:SGFwcCB0aGUgYmVzdCE=
@@ -245,17 +245,17 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="禁用路由">
-    A global parameter to disable routing in the app.
+    用于在应用中禁用路由的全局参数。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     routing-enable: [string]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -266,7 +266,7 @@ title: "应用管理"
     routing-enable: 0
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #routing-enable: 0
@@ -275,17 +275,17 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="隧道配置（仅适用于桌面版）">
-    Pass your own tunnel configuration for the sing-box core.
+    为 sing-box 核心传递自定义隧道配置。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     custom-tunnel-config: [json]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -296,7 +296,7 @@ title: "应用管理"
     custom-tunnel-config: {...}
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #custom-tunnel-config: {...}
@@ -312,17 +312,17 @@ title: "应用管理"
 
 <AccordionGroup>
   <Accordion title="更改订阅 URL">
-    If your domain is blocked by the provider, and users can only connect to servers and update the subscription via VPN, this parameter is for you. By setting a new domain name in this parameter value, you ensure its automatic replacement for all subscription users.
+    如果您的域名被提供商屏蔽，而用户只能通过 VPN 连接服务器并更新订阅，则此参数正是为您设计的。在此参数值中设置新的域名，即可确保订阅的所有用户自动替换该域名。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     new-url: [url]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -333,7 +333,7 @@ title: "应用管理"
     new-url: https://mynew-domain.com/3J3jrb4jfc
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #new-url https://mynew-domain.com/3J3jrb4jfc
@@ -342,17 +342,17 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="更改订阅域名">
-    Change the site domain without changing the full URL, keeping the rest of the address.
+    更改网站域名而不更改完整 URL，保留地址的其余部分。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     new-domain: [domain]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -363,7 +363,7 @@ title: "应用管理"
     new-domain: mynew-domain.com
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #new-domain mynew-domain.com
@@ -380,30 +380,30 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    Allows setting an additional caption displayed under the server name instead of the standard text (e.g., "VMess", "VLESS", "Trojan").
+    允许设置额外的说明文字，该文字显示在服务器名称下方，代替标准文本（例如 "VMess"、"VLESS"、"Trojan"）。
 
-    - Maximum length — 30 characters.
-    - If it doesn't fit on the screen, it will be shortened with an ellipsis.
-    - Set after `title` via the `?` separator.
+    - 最大长度为 30 个字符。
+    - 如果无法完整显示在屏幕上，将以省略号截断。
+    - 在 `title` 之后通过分隔符 `?` 设置。
 
-    **Examples:**
+    **示例：**
 
     VLESS
 
     ```
-    vless://1fb46fdc-e3e4-35d1-bd46-605d773b5762@5.5.8.9:443?encryption=none&node_id=482&headerType=none&type=tcp&security=reality&sni=booking.com&fp=chrome&pbk=YqHW8a4iAc1SZYpTrFVoOQg1F3yAdX1tWXuROZUCsEU[...]
+    vless://1fb46fdc-e3e4-35d1-bd46-605d773b5762@5.5.8.9:443?encryption=none&node_id=482&headerType=none&type=tcp&security=reality&sni=booking.com&fp=chrome&pbk=YqHW8a4iAc1SZYpTrFVoOQg1F3yAdX1tWXuROZUCsEU&sid=6ba85179e30d4fc2&flow=xtls-rprx-vision&xtls=2#title?serverDescription=SGFwcCB0aGUgYmVzdA==
     ```
 
     VMESS
 
     ```
-    vmess://eyJob3N0IjoiZWxhaG9tZWtpdGNoZW4uY29tIiwicGF0aCI6IiIsInRscyI6IiIsImFkZCI6ImVsYWhvbWVraXRjaGVuLmNvbSIsInBvcnQiOjUwMDAsImFpZCI6MCwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInBzIjoi4piB77iPIDog[...]
+    vmess://eyJob3N0IjoiZWxhaG9tZWtpdGNoZW4uY29tIiwicGF0aCI6IiIsInRscyI6IiIsImFkZCI6ImVsYWhvbWVraXRjaGVuLmNvbSIsInBvcnQiOjUwMDAsImFpZCI6MCwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInBzIjoi4piB77iPIDogNTMuM0dCIiwiaWQiOiI4N2ZhN2VmMC1jM2ZjLTNiOTAtYTJkOC01OGZjYjhkZmZmMjYiLCJzZXJ2ZXJEZXNjcmlwdGlvbiI6IkhhcHAgdGhlIGJlc3QifQ==
     ```
 
     Trojan
 
     ```
-    trojan://8GXLP3dEzm7T8wP5Jx0Ufg@199.107.164.105:443?security=tls&insecure=1&fragment=3,1,tlshello&type=ws&headerType=&path=%2F&host=quictest.burncommunity.ru&sni=quictest.burncommunity.ru&fp=chrome&al[...]
+    trojan://8GXLP3dEzm7T8wP5Jx0Ufg@199.107.164.105:443?security=tls&insecure=1&fragment=3,1,tlshello&type=ws&headerType=&path=%2F&host=quictest.burncommunity.ru&sni=quictest.burncommunity.ru&fp=chrome&alpn=http%2F1.1#title?serverDescription=SGFwcCB0aGUgYmVzdA==
     ```
 
     Socks5
@@ -445,39 +445,43 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="订阅分片与前置域名">
-    Some CDNs support domain fronting. This allows connecting to your site through a third-party domain. For example, by specifying the connection address `visa.com` and Host header `my-domain.com`, the provider will only see a request to `visa.com`.  You can also access your domain for the server list using packet fragmentation in SNI TLSHello.  By default, fragmentation is enabled for all subscriptions. The user can add the subscription only once; on repeat attempts, if the account is not premium, the update will not be allowed.
+    某些 CDN 支持域名前置。这允许您通过第三方域名连接到您的网站。例如，将连接地址指定为 `visa.com`，而 Host 标头为 `my-domain.com`，提供商将只看到对 `visa.com` 的请求。
 
-    **URL Scheme with Parameters**
+    此外，您还可以使用 TLSHello 中的数据包分片访问您的域名以获取服务器列表。
+
+    默认情况下，所有订阅都启用了分片。用户只能添加一次订阅；如果账户不是高级账户，则不允许更新。
+
+    **带参数的 URL 结构**
 
     ```
-    [link]#title?[fragment]&[resolve-address]&[host]&[insecure]
+    [链接]#标题?[分片参数]&[解析地址]&[主机]&[不安全模式]
     
-    Fronting:
+    前置域名示例：
     visa.com/123#MyVPN?resolve-address=visa.com&host=mydomain.com
     
-    Fragmentation:
+    分片示例：
     mydomain.com/123#MyVPN?fragment=80-250,10-100,tlshello
     ```
 
-    Fragmentation has three parameters: `[length]`, `[interval]` and `[packets]`.
+    分片包含三个参数：`[length]`、`[interval]` 和 `[packets]`。
 
-    For fronting, specify the URL with the domain used for connection first, [...]
+    使用前置域名时，需要首先指定将通过其建立连接的域名 URL。还需要设置 `resolve-address` —— 可以是域名或 IP 地址 —— 以及 `host`，其对应于您所选网络中的主机。
   </Accordion>
   <Accordion title="高级分片">
-    This feature is currently in closed testing and will be available soon...
+    此功能目前正在进行封闭测试，即将推出...
   </Accordion>
   <Accordion title="不可禁用的 HWID">
-    By default, HWID is enabled in all Happ apps. But if you want the user to be unable to disable the transmission of this parameter by turning it off in the app settings, you can send a special parameter with the subscription.
+    默认情况下，HWID 在所有 Happ 应用中均为启用状态。但如果您希望用户无法在应用设置中禁用此参数的转发，则可以随订阅一起发送此特殊参数。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     subscription-always-hwid-enable: [true / 1]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -488,7 +492,7 @@ title: "应用管理"
     subscription-always-hwid-enable: 1
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #subscription-always-hwid-enable: 1
@@ -497,23 +501,23 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="订阅到期通知">
-    You can enable automatic notifications about subscription expiration. The user will receive reminders 3 days before expiration: the app will send one notification per day for three days. This helps the user not forget to renew the subscription on time.
+    您可以启用订阅到期的自动通知功能。用户将在订阅到期前 3 天收到提醒：连续三天每天发送一条通知。这有助于用户及时续订订阅。
 
-    Notification text:
+    通知文本：
 
     ```
-     Your subscription [name] will expire soon, don’t forget to renew it.
+     У вашей подписки [name] скоро истечёт срок действия, не забудьте продлить её.
     ```
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     notification-subs-expire: [true / 1]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -524,7 +528,7 @@ title: "应用管理"
     notification-subs-expire: 1
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #notification-subs-expire: 1
@@ -541,17 +545,17 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    Disable the ability to view and edit server configurations for users of your subscription. Not available for all apps.
+    禁用订阅用户查看和编辑服务器配置的功能。该设置适用于已添加的订阅以及将来要添加的订阅。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     hide-settings: [true / 1]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -562,7 +566,7 @@ title: "应用管理"
     hide-settings: 1
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #hide-settings: 1
@@ -571,9 +575,11 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="域名解析">
-    The app can perform preliminary domain resolution for servers before establishing a connection. You can specify any DoH server, and when connecting to an Xray server, the domain name will be replaced with the received IP address. If multiple IP addresses are returned for a domain, the app will automatically select the one with the minimum response time (ping). However, note: with a large number of IP addresses, connection may take longer as all options will be pre-tested.
+    应用可以在建立连接之前预先解析服务器的域名。您可以指定任何 DoH 服务器，在连接到 Xray 服务器时，域名将被替换为获取的 IP 地址。
 
-    **Example of configuring this parameter:**
+    如果域名返回多个 IP 地址，应用将自动选择延迟时间（ping）最低的那个。但需要注意的是：如果 IP 地址数量较多，连接可能需要更长时间，因为所有选项都会提前测试。
+
+    **该参数配置示例：**
 
     ```
     server-address-resolve-enable: [true / 1]
@@ -581,9 +587,9 @@ title: "应用管理"
     server-address-resolve-dns-ip: [ip]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -596,7 +602,7 @@ title: "应用管理"
     server-address-resolve-dns-ip: 77.88.8.8
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #server-address-resolve-enable: 1
