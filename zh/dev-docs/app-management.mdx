@@ -14,7 +14,7 @@ title: "应用管理"
 #### **标准参数**
 
 <AccordionGroup>
-  <Accordion title="Subscription Auto-Update">
+  <Accordion title="订阅自动更新">
     <Frame>
       <img
         src="/images/rule.png"
@@ -52,7 +52,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Subscription Name">
+  <Accordion title="订阅名称">
     <Frame>
       <img
         src="/images/name.png"
@@ -92,7 +92,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Subscription Status String (traffic, expiration date)">
+  <Accordion title="订阅状态栏（流量、到期日期）">
     <Frame>
       <img
         src="/images/stroka.png"
@@ -130,7 +130,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Support Page Link">
+  <Accordion title="支持页面链接">
     <Frame>
       <img
         src="/images/support.png"
@@ -168,7 +168,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Website Link">
+  <Accordion title="网站页面链接">
     <Frame>
       <img
         src="/images/url.png"
@@ -206,7 +206,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Announcement">
+  <Accordion title="公告">
     <Frame>
       <img
         src="/images/info.png"
@@ -244,7 +244,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Disable Routing">
+  <Accordion title="禁用路由">
     A global parameter to disable routing in the app.
 
     **Example of configuring this parameter:**
@@ -274,7 +274,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Tunnel Configuration (Desktop only)">
+  <Accordion title="隧道配置（仅适用于桌面版）">
     Pass your own tunnel configuration for the sing-box core.
 
     **Example of configuring this parameter:**
@@ -311,7 +311,7 @@ title: "应用管理"
 需要 Provider ID 参数！
 
 <AccordionGroup>
-  <Accordion title="Change Subscription URL">
+  <Accordion title="更改订阅 URL">
     If your domain is blocked by the provider, and users can only connect to servers and update the subscription via VPN, this parameter is for you. By setting a new domain name in this parameter value, you ensure its automatic replacement for all subscription users.
 
     **Example of configuring this parameter:**
@@ -341,7 +341,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Change Subscription Domain">
+  <Accordion title="更改订阅域名">
     Change the site domain without changing the full URL, keeping the rest of the address.
 
     **Example of configuring this parameter:**
@@ -371,7 +371,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Server Description in Subscription">
+  <Accordion title="订阅中的服务器描述">
     <Frame>
       <img
         src="/images/server.png"
@@ -444,7 +444,7 @@ title: "应用管理"
     }
     ```
   </Accordion>
-  <Accordion title="Subscription Fragmentation and Fronting">
+  <Accordion title="订阅分片与前置域名">
     Some CDNs support domain fronting. This allows connecting to your site through a third-party domain. For example, by specifying the connection address `visa.com` and Host header `my-domain.com`, the provider will only see a request to `visa.com`.  You can also access your domain for the server list using packet fragmentation in SNI TLSHello.  By default, fragmentation is enabled for all subscriptions. The user can add the subscription only once; on repeat attempts, if the account is not premium, the update will not be allowed.
 
     **URL Scheme with Parameters**
@@ -463,10 +463,10 @@ title: "应用管理"
 
     For fronting, specify the URL with the domain used for connection first, [...]
   </Accordion>
-  <Accordion title="Advanced fragmentation">
+  <Accordion title="高级分片">
     This feature is currently in closed testing and will be available soon...
   </Accordion>
-  <Accordion title="Non-disableable HWID">
+  <Accordion title="不可禁用的 HWID">
     By default, HWID is enabled in all Happ apps. But if you want the user to be unable to disable the transmission of this parameter by turning it off in the app settings, you can send a special parameter with the subscription.
 
     **Example of configuring this parameter:**
@@ -496,7 +496,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Subscription Expiration Notification">
+  <Accordion title="订阅到期通知">
     You can enable automatic notifications about subscription expiration. The user will receive reminders 3 days before expiration: the app will send one notification per day for three days. This helps the user not forget to renew the subscription on time.
 
     Notification text:
@@ -532,7 +532,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Hide Server Settings in Subscription">
+  <Accordion title="隐藏订阅中的服务器设置">
     <Frame>
       <img
         src="/images/option.png"
@@ -570,7 +570,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Domain Resolving">
+  <Accordion title="域名解析">
     The app can perform preliminary domain resolution for servers before establishing a connection. You can specify any DoH server, and when connecting to an Xray server, the domain name will be replaced with the received IP address. If multiple IP addresses are returned for a domain, the app will automatically select the one with the minimum response time (ping). However, note: with a large number of IP addresses, connection may take longer as all options will be pre-tested.
 
     **Example of configuring this parameter:**
@@ -613,7 +613,7 @@ title: "应用管理"
 需要 Provider ID 参数！
 
 <AccordionGroup>
-  <Accordion title="Auto Connect">
+  <Accordion title="自动连接">
     Allows automatically connecting the user to servers when launching the app. Additionally, using the **subscription-autoconnect-type** parameter, you can specify the criterion for connecting to a specific server.
 
     **Example of configuring this parameter:**
@@ -646,7 +646,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Auto Ping">
+  <Accordion title="自动 Ping">
     Run automatic server list testing when opening the app if necessary.
 
     **Example of configuring this parameter:**
@@ -676,7 +676,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Auto-Update Subscriptions">
+  <Accordion title="订阅自动更新">
     In the app, you can enable or disable auto-update for all subscriptions at once — this setting applies to all subscriptions simultaneously. If you need to set auto-update only for a specific subscription, use the Subscription auto-update functionality. When the global setting is disabled, each subscription independently determines its update time.
 
     **Example of configuring this parameter:**
@@ -706,7 +706,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Fragmentation">
+  <Accordion title="分片">
     This is a global fragmentation management parameter for all subscriptions. If you need to assign fragmentation only to a specific subscription or server, use the free functionality and instructions from the general app documentation. When the global setting is disabled, each subscription independently determines fragmentation settings.
 
     **Example of configuring this parameter:**
@@ -826,7 +826,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="App Auto-Start">
+  <Accordion title="应用自动启动">
     This function allows automatically launching the app when the device is turned on. Currently available only on Android.
 
     **Example of configuring this parameter:**
@@ -856,7 +856,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Update Subscriptions When App Launches">
+  <Accordion title="应用启动时更新订阅">
     This function automatically updates all subscriptions in the app whenever the app is opened.
 
     **Example of configuring this parameter:**
@@ -886,7 +886,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="App-specific Proxy (Android)">
+  <Accordion title="选定应用的代理 (Android)">
     This parameter allows specifying a list of apps that should use VPN or, conversely, bypass it. If an app is not yet installed on the device but is listed, it will be automatically taken into account on first VPN connection after installation.
 
     **Example of configuring this parameter:**
@@ -919,7 +919,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Packet Analysis (Sniffing)">
+  <Accordion title="数据包分析 (Sniffing)">
     In **xray-core**, sniffing is needed to analyze the first packets of a connection and automatically determine the **protocol** (HTTP, TLS, BitTorrent, etc.) and **domain** (SNI/Host). May affect media loading in the WeChat app. Enabled by default.
 
     **Example of configuring this parameter:**
@@ -949,7 +949,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Disable Subscription Collapse">
+  <Accordion title="禁止折叠订阅">
     <Frame>
       <img
         src="/images/podpiski.png"
@@ -987,7 +987,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Ping Display Mode">
+  <Accordion title="Ping 显示模式">
     <Frame>
       <img
         src="/images/otobraz.png"
@@ -1064,7 +1064,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Proxy / TUN Mode (Desktop only)">
+  <Accordion title="代理 / TUN 模式（仅适用于桌面版）">
     **Use only one** of the two listed parameters! These parameters determine the connection type when adding/updating the subscription.
 
     **Example of configuring this parameter:**
@@ -1095,7 +1095,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="TUN Mode (Desktop only)">
+  <Accordion title="TUN 模式（仅适用于桌面版）">
     Determines which mode will be used for TUN connection.
 
     - `system` — Uses OS system network stack. Fast and efficient, but depends on properly set routes and firewall.
@@ -1128,7 +1128,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Tunnel Core Selection (Desktop only)">
+  <Accordion title="选择隧道核心（仅适用于桌面版）">
     Determines which core will be used for TUN connection. Available: [sing-box](https://github.com/SagerNet/sing-box[...])
 
     **Example of configuring this parameter:**
@@ -1158,7 +1158,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Exclude routes">
+  <Accordion title="排除路由">
     Defines subnets and IP addresses whose traffic should not go through the tunnel. Addresses are specified in a single line, separated by spaces and commas.
 
     **Example of configuring this parameter:**
@@ -1188,7 +1188,7 @@ title: "应用管理"
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Themes (only for iOS)">
+  <Accordion title="主题（仅限 iOS）">
     <Frame>
       <img
         src="/images/ios.png"
