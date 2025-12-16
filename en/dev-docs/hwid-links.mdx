@@ -1,4 +1,33 @@
 ---
 title: "HWID Links"
-description: "Description of your new file."
 ---
+
+<Frame>
+  <img
+    src="/images/hwid.png"
+    alt="Описание картинки"
+    style={{ width:"150px",height:"auto" }}
+    className="rounded-xl"
+  />
+</Frame>
+
+HWID links are subscriptions tied to a specific device. Verification is performed locally on the client side.
+
+To create such a link, first obtain the device's HWID, then generate the link in your personal account.
+
+HWID link creation is only available through [happ-proxy.com](http://happ-proxy.com).
+
+#### **Creating via the website**
+
+1. On the Link Limit page, select the HWID Links section.
+2. Specify the unencrypted URL of your subscription.
+3. Enter the HWID of the device for which the link is intended.
+
+**After generation:**
+
+- The HWID parameter is automatically added to the URL.
+- You will receive an encrypted link.
+
+#### **How it works**
+
+When adding the link, the application compares the HWID in the link with the device's HWID. If they match, the link is added to the application.
