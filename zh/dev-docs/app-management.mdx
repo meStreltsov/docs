@@ -620,18 +620,18 @@ title: "应用管理"
 
 <AccordionGroup>
   <Accordion title="自动连接">
-    Allows automatically connecting the user to servers when launching the app. Additionally, using the **subscription-autoconnect-type** parameter, you can specify the criterion for connecting to a specific server.
+    允许在启动应用时自动将用户连接到服务器。此外，可以通过参数 **subscription-autoconnect-type** 指定连接到特定服务器的条件。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     subscription-autoconnect: [true / 1]
     subscription-autoconnect-type: [“lastused“/”lowestdelay”]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -643,7 +643,7 @@ title: "应用管理"
     subscription-autoconnect-type: lowestdelay
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #subscription-autoconnect: 1
@@ -653,17 +653,17 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="自动 Ping">
-    Run automatic server list testing when opening the app if necessary.
+    如有必要，在打开应用时自动测试服务器列表。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     subscription-ping-onopen-enabled: [true / 1]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -674,7 +674,7 @@ title: "应用管理"
     subscription-ping-onopen-enabled: 1
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #subscription-ping-onopen-enabled: 1
@@ -683,17 +683,17 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="订阅自动更新">
-    In the app, you can enable or disable auto-update for all subscriptions at once — this setting applies to all subscriptions simultaneously. If you need to set auto-update only for a specific subscription, use the Subscription auto-update functionality. When the global setting is disabled, each subscription independently determines its update time.
+    可以在应用中同时启用或禁用所有订阅的自动更新——此设置会同时应用于所有订阅。如果只需要为特定订阅设置自动更新，请使用“订阅自动更新”功能。禁用全局设置后，每个订阅将独立确定其更新时间。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     subscription-auto-update-enable: [true / 1] 
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -704,7 +704,7 @@ title: "应用管理"
     subscription-auto-update-enable: 1
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #new-url: https:/mynew-domain.com/3J3jrb4jfc
@@ -713,9 +713,9 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="分片">
-    This is a global fragmentation management parameter for all subscriptions. If you need to assign fragmentation only to a specific subscription or server, use the free functionality and instructions from the general app documentation. When the global setting is disabled, each subscription independently determines fragmentation settings.
+    这是控制所有订阅分片的全局参数。如果只需要为特定订阅或服务器设置分片，请使用免费功能和应用通用文档中的说明。禁用全局设置后，每个订阅将独立确定分片设置。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     fragmentation-enable: [true / 1]
@@ -730,9 +730,9 @@ title: "应用管理"
     noises-applyto: [ip,ipv4,ipv6]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -750,6 +750,23 @@ title: "应用管理"
     noises-packet: 10-20
     noises-delay: 10-16
     noises-applyto: ipv4
+    ```
+
+    通过订阅内容：
+
+    ```
+    #fragmentation-enable: 1
+    #fragmentation-packets: tlshello
+    #fragmentation-length: 50-100
+    #fragmentation-interval: 5
+    #fragmentation-maxsplit: 100-200
+    #noises-enable: 1
+    #noises-type: rand
+    #noises-packet: 10-20
+    #noises-delay: 10-16
+    #noises-applyto: ipv4
+    vless://70cc48c5‑b2f4…
+    vmess://zkIAU1JitkI…
     ```
 
     Via subscription body:
@@ -770,18 +787,18 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="Ping">
-    This function allows selecting the ping execution method in the app. Three options are available: “via Proxy”, “TCP”, and “ICMP”. For “via Proxy” mode, you can additionally specify a URL for ping checking.
+    此功能允许选择应用中执行 ping 的方式。提供三个选项："via Proxy"、"TCP" 和 "ICMP"。对于 "via Proxy" 模式，可以额外指定用于 ping 检查的 URL。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     ping-type: ["proxy", "proxy-head', "tcp","icmp"]
     check-url-via-proxy: [url]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -793,7 +810,7 @@ title: "应用管理"
     check-url-via-proxy: https://cp.cloudflare.com/generate_204
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #ping-type proxy
@@ -803,17 +820,17 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="User-Agent">
-    This function allows changing the User-Agent used in headers when fetching the subscription. Useful when the provider blocks requests with non-standard or unsuitable headers.
+    此功能允许更改获取订阅时标头中使用的 User-Agent。在提供商屏蔽非标准或不合适标头的请求时非常有用。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     change-user-agent: [String] 
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -824,7 +841,7 @@ title: "应用管理"
     change-user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #change-user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
@@ -833,17 +850,17 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="应用自动启动">
-    This function allows automatically launching the app when the device is turned on. Currently available only on Android.
+    允许在设备开机时自动启动应用。目前仅在 Android 上可用。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     app-auto-start: [String] 
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -854,7 +871,7 @@ title: "应用管理"
     app-auto-start: 1
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #app-auto-start: 1
@@ -863,17 +880,17 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="应用启动时更新订阅">
-    This function automatically updates all subscriptions in the app whenever the app is opened.
+    此功能会在每次打开应用时自动更新应用中的所有订阅。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     subscription-auto-update-open-enable: [String] 
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -884,7 +901,7 @@ title: "应用管理"
     subscription-auto-update-open-enable: 1
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #subscription-auto-update-open-enable: 1
@@ -893,18 +910,18 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="选定应用的代理 (Android)">
-    This parameter allows specifying a list of apps that should use VPN or, conversely, bypass it. If an app is not yet installed on the device but is listed, it will be automatically taken into account on first VPN connection after installation.
+    可以在此参数中指定应使用 VPN 或绕过 VPN 的应用列表。如果应用尚未安装在设备上但已在列表中指定，则在首次安装后连接到 VPN 时会自动将其计入。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
-    per-app-proxy-mode: [off/on/bypass] \\Specify one of three parameters
-    per-app-proxy-list: [com.google.chrome,com.meta.instagram] \\list appIDs separated by ','
+    per-app-proxy-mode: [off/on/bypass] \\请从三个参数中选择一个
+    per-app-proxy-list: [com.google.chrome,com.meta.instagram] \\以 ',' 分隔的 appID 列表
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -916,7 +933,7 @@ title: "应用管理"
     per-app-proxy-list: com.google.chrome,com.meta.instagram
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #per-app-proxy-mode: on
@@ -926,17 +943,17 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="数据包分析 (Sniffing)">
-    In **xray-core**, sniffing is needed to analyze the first packets of a connection and automatically determine the **protocol** (HTTP, TLS, BitTorrent, etc.) and **domain** (SNI/Host). May affect media loading in the WeChat app. Enabled by default.
+    xray-core 中的 sniffing 用于分析连接的前几个数据包，并自动确定**协议**（HTTP、TLS、BitTorrent 等）和**域名**（SNI/Host）。可能会影响微信应用中的媒体加载。默认已启用。\\
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     sniffing-enable: [String] 
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -947,7 +964,7 @@ title: "应用管理"
     sniffing-enable: 1
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #sniffing-enable: 1
@@ -964,17 +981,17 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    This function disables the ability to collapse a subscription: the server list is always fully displayed.
+    此功能禁用折叠订阅的能力：服务器列表始终以完全展开的方式显示。\\
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
-    subscriptions-collapse: [false / 0]
+    subscriptions-collapse: [false / 0] 
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -985,7 +1002,7 @@ title: "应用管理"
     subscriptions-collapse: 0
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #subscriptions-collapse: 0
@@ -1002,17 +1019,17 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    Allows displaying icons instead of time values.
+    允许显示图标而不是时间值\\
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     ping-result: [time,icon]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -1023,7 +1040,7 @@ title: "应用管理"
     ping-result: icon
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #ping-result: icon
@@ -1032,9 +1049,9 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="Mux">
-    Mux in xray-core is a multiplexing function that allows transmitting data from multiple virtual TCP connections over one physical TCP connection. It is designed to reduce delays from TCP handshakes but not to increase bandwidth (may even slow down large downloads). Configured in outbound with parameters like enabled and concurrency (min -1, max 1024).
+    Mux 在 xray-core 中是多路复用（multiplexing）功能，允许通过单个物理 TCP 连接传输多个虚拟 TCP 连接的数据。旨在降低 TCP 握手的延迟，而不是提高带宽（甚至可能减慢大量下载）。在出站配置中设置，参数包括 enabled 和 concurrency（最小 -1，最大 1024）。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     mux-enable: [true / 1]
@@ -1043,9 +1060,9 @@ title: "应用管理"
     mux-quic: [String]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -1059,7 +1076,7 @@ title: "应用管理"
     mux-quic: skip
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #mux-enable: 1
@@ -1071,18 +1088,18 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="代理 / TUN 模式（仅适用于桌面版）">
-    **Use only one** of the two listed parameters! These parameters determine the connection type when adding/updating the subscription.
+    必须**仅使用**以下两个参数之一！这些参数在添加/更新订阅时确定连接类型。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     proxy-enable: [true / 1]
     tun-enable: [true / 1]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -1093,7 +1110,7 @@ title: "应用管理"
     proxy-enable: 1
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #proxy-enable: 1
@@ -1102,20 +1119,20 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="TUN 模式（仅适用于桌面版）">
-    Determines which mode will be used for TUN connection.
+    确定 TUN 连接使用的模式。
 
-    - `system` — Uses OS system network stack. Fast and efficient, but depends on properly set routes and firewall.
-    - `gvisor` — Userspace gVisor stack. Less dependent on kernel rules and iptables/nftables/Docker conflicts, better isolation; might have slightly lower performance.
+    - `system` — 使用操作系统的系统网络栈。 快速高效，但依赖于路由和防火墙的正确配置。
+    - `gvisor` — 使用 gVisor 的用户空间栈（userspace）。 减少对内核规则及 iptables/nftables/Docker 冲突的依赖，隔离性更好；可能存在轻微的性能损失。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     tun-mode: [system,gvisor]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -1126,26 +1143,25 @@ title: "应用管理"
     tun-mode: gvisor
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #tun-mode: gvisor
     vless://70cc48c5‑b2f4…
-    vmess://zkIAU1JitkI…
     ```
   </Accordion>
   <Accordion title="选择隧道核心（仅适用于桌面版）">
-    Determines which core will be used for TUN connection. Available: [sing-box](https://github.com/SagerNet/sing-box[...])
+    确定将用于 TUN 连接的核心。可选择 [sing-box](https://github.com/SagerNet/sing-box)、[tun2proxy](https://github.com/tun2proxy/tun2proxy)
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     tun-type: [singbox, tun2proxy]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -1156,7 +1172,7 @@ title: "应用管理"
     tun-type: tun2proxy
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #tun-type: tun2proxy
@@ -1165,17 +1181,17 @@ title: "应用管理"
     ```
   </Accordion>
   <Accordion title="排除路由">
-    Defines subnets and IP addresses whose traffic should not go through the tunnel. Addresses are specified in a single line, separated by spaces and commas.
+    定义不应通过隧道传输流量的子网和 IP 地址列表。地址在同一行中指定，以空格和逗号分隔。
 
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     exclude-routes: [String]
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -1186,7 +1202,7 @@ title: "应用管理"
     exclude-routes: 192.169.1.0/24, 10.0.0.0/8
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #exclude-routes: 192.169.1.0/24, 10.0.0.0/8
@@ -1203,7 +1219,7 @@ title: "应用管理"
         className="rounded-xl"
       />
     </Frame>
-    Allows you to customize the color theme to your preference. You can create your own theme in the editor — just long-press the “Appearance Theme” label to open the menu. The created theme can be exported to the clipboard, as well as imported from the clipboard, from a .happ file, or transferred through a subscription.
+    允许您将配色主题自定义为个人风格。您可以在编辑器中创建自己的主题——长按“外观主题”标签即可打开菜单。创建的主题可以导出到剪贴板，也可以从剪贴板、.happ 文件中导入，或通过订阅进行分享。
 
     VIOLET Theme
 
@@ -1246,8 +1262,6 @@ title: "应用管理"
     }
     ```
 
-    Show all 36 lines
-
     Turquoise Theme
 
     ```
@@ -1289,21 +1303,18 @@ title: "应用管理"
       ],
       "subHeaderButtonColor" : "#BAD7CFFF",
       "buttonTextColor" : "#000000FF"
-    }
     ```
 
-    Show all 39 lines
-
-    **Example of configuring this parameter:**
+    **该参数配置示例：**
 
     ```
     color-profile: [String] //base64 or plainString
     color-profile: resetcolors // full reset
     ```
 
-    **Ways to pass it:**
+    **传递方式：**
 
-    Via HTTP Headers:
+    通过 HTTP 标头：
 
     ```
     HTTP/2 200 
@@ -1314,7 +1325,7 @@ title: "应用管理"
     color-profile: {"backgroundGradientRotationAngle":37.1,"serverRowBackgroundColor":"#21003D67","subsHeaderColor":"#42296DFF","profileWebPageIconColor":"#A2B8FFFF","selectedServerRowColor":"#3E2F62B5","disclosureSubHeaderTextColor":"#C1C2E2FF","buttonTextColor":"#FFFFFFFF","buttonTimerColor":"#FFFFFFFF","subscriptionInfoBackgroundColor":"#21003CFF","backgroundColors":["#3D2A7DFF","#6557BAFF","#9377FF7F"],"disclosureHeaderTextColor":"#FFFFFFFF","backgroundGradientColorIntensity":1,"additionalOptionsButtonColor":"#FFFFFFFF","buttonImageType":"light","serverRowSubTitleTextColor":"#C1C2E2FF","supportIconColor":"#FFFFFFFF","topBarButtonsColor":"#FFFFFFFF","subscriptionTrafficBackgroundColor":"#533EA7FF","subHeaderButtonColor":"#FFFFFFFF","buttonColor":"#9377FFFF","powerIconColor":"#3D2A7DFF","subscriptionInfoTextColor":"#FFFFFFFF","serverRowTitleTextColor":"#FFFFFFFF","backgroundImageType":"system","elipseColors":["#00B460FF","#CF72FFE0","#FFDD00FF"],"serverRowChevronColor":"#FFFFFFFF"}
     ```
 
-    Via subscription body:
+    通过订阅内容：
 
     ```
     #color-profile: {"backgroundGradientRotationAngle":37.1,"serverRowBackgroundColor":"#21003D67","subsHeaderColor":"#42296DFF","profileWebPageIconColor":"#A2B8FFFF","selectedServerRowColor":"#3E2F62B5","disclosureSubHeaderTextColor":"#C1C2E2FF","buttonTextColor":"#FFFFFFFF","buttonTimerColor":"#FFFFFFFF","subscriptionInfoBackgroundColor":"#21003CFF","backgroundColors":["#3D2A7DFF","#6557BAFF","#9377FF7F"],"disclosureHeaderTextColor":"#FFFFFFFF","backgroundGradientColorIntensity":1,"additionalOptionsButtonColor":"#FFFFFFFF","buttonImageType":"light","serverRowSubTitleTextColor":"#C1C2E2FF","supportIconColor":"#FFFFFFFF","topBarButtonsColor":"#FFFFFFFF","subscriptionTrafficBackgroundColor":"#533EA7FF","subHeaderButtonColor":"#FFFFFFFF","buttonColor":"#9377FFFF","powerIconColor":"#3D2A7DFF","subscriptionInfoTextColor":"#FFFFFFFF","serverRowTitleTextColor":"#FFFFFFFF","backgroundImageType":"system","elipseColors":["#00B460FF","#CF72FFE0","#FFDD00FF"],"serverRowChevronColor":"#FFFFFFFF"}
