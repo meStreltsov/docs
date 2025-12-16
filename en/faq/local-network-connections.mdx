@@ -2,6 +2,98 @@
 title: "Local Network Connections"
 ---
 
+The **"Allow LAN Connections"** feature lets you share your VPN connection with other devices on the same local network or connected to the same Wi-Fi. This is convenient if you want to use one VPN connection on multiple devices — for example, on a TV, console, or another computer.
+
+#### **1. How to enable the feature**
+
+1. Open the Happ **Settings**.
+2. Go to **Advanced Settings**.
+3. Activate the **"Allow LAN Connections"** option.
+4. Connect to a VPN server in the Happ app.
+
+After activation, additional parameters will appear:
+
+- **Current IP** — the local IP address of the device (e.g., `192.168.1.100`);
+- **SOCKS5 Port** — for connecting via SOCKS proxy (e.g., `10808`);
+- **HTTP Port** — for connecting via HTTP proxy (e.g., `10809`).
+
+> ⚠️ When this feature is disabled (or the VPN connection is lost), connected devices will lose VPN access.
+
+### **2. Configuring connection on other devices**
+
+<AccordionGroup>
+  <Accordion title="Android">
+    1. Open your device's **Settings**.
+    2. Go to **Wi-Fi → select your network**.
+    3. Tap **Advanced** or **Modify network**.
+    4. In the **Proxy** section, select **Manual**.
+    5. Specify:
+       - **Proxy hostname**: current IP (e.g., `192.168.1.100`);
+       - **Proxy port**: HTTP port (e.g., `10809`).
+    6. Save the settings and connect to the network.
+  </Accordion>
+  <Accordion title="iOS">
+    1. Open **Settings → Wi-Fi**.
+    2. Find the connected network and tap the **ℹ️** icon next to it.
+    3. Scroll down to the **HTTP Proxy** section.
+    4. Select **Manual**.
+    5. Enter:
+       - **Server**: current IP (e.g., `192.168.1.100`);
+       - **Port**: HTTP port (e.g., `10809`).
+    6. Go back — settings are saved automatically.
+  </Accordion>
+  <Accordion title="Linux">
+    1. Open **System Settings**.
+    2. Go to **Network → Proxy**.
+    3. Activate **Manual proxy configuration**.
+    4. Enter:
+       - **Address**: current IP (e.g., `192.168.1.100`);
+       - **Port**: HTTP port (e.g., `10809`).
+    5. Save changes.
+  </Accordion>
+  <Accordion title="macOS">
+    1. Open **System Settings → Network**.
+    2. Select the active connection (**Wi-Fi** or **Ethernet**).
+    3. Click **Advanced… → Proxies tab**.
+    4. Check **SOCKS Proxy** or **HTTP Proxy**.
+    5. Specify:
+       - **Server**: current IP (e.g., `192.168.1.100`);
+       - **Port**: SOCKS5 port or HTTP port (e.g., `10808` or `10809`).
+    6. Click **OK** and **Apply**.
+  </Accordion>
+  <Accordion title="Windows">
+    1. Open **Windows Settings** (via Start → Settings or **Win+I**).
+    2. Go to **Network & Internet → Proxy**.
+    3. In the **Manual proxy setup** section, turn on **Use a proxy server**.
+    4. Specify:
+       - **Address**: value from the _Current IP_ field (e.g., `192.168.1.100`);
+       - **Port**: value from the _HTTP Port_ field (e.g., `10809`).
+    5. Click **Save**.
+
+    After this, all system traffic will go through the Happ VPN connection.
+  </Accordion>
+</AccordionGroup>
+
+После этого весь трафик системы будет проходить через VPN-подключение Happ.
+
+### **3. Using built-in proxy settings in individual applications**
+
+Some applications (on all platforms — Windows, macOS, Android, Linux) have their own proxy settings. If the system proxy is unavailable or you need individual configuration, set up the proxy directly in the required program. This method is especially convenient if you only need a proxy for specific applications — for example, browsers.
+
+<AccordionGroup>
+  <Accordion title="Firefox configuration example">
+    1. Open **Settings → General → Network Settings**.
+    2. Click **Settings…**.
+    3. Select **Manual proxy configuration**.
+    4. Specify:
+       - **SOCKS5 Host**: current IP (e.g., `192.168.1.100`);
+       - **Port**: SOCKS5 port (e.g., `10808`).
+    5. Click **OK**.
+  </Accordion>
+</AccordionGroup>
+
+### **4. Типичные ошибки при LAN-подключении**
+
 ### 
 
 | **Symptom**                      | **Possible cause**                                                          | **What to do**                                                            |
