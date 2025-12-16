@@ -308,21 +308,21 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
 
 ### **Advanced Parameters** <a id="parametr" />
 
-Необходим параметр [Provider ID](https://www.happ.su/main/ru/dev-docs/provider-id)!
+[Provider ID](https://www.happ.su/main/dev-docs/provider-id) parameter is required!
 
 <AccordionGroup>
   <Accordion title="Change Subscription URL">
-    Если домен заблокирован вашим провайдером, а пользователи могут подключаться к серверам и обновлять подписку только через VPN, этот параметр именно для вас. Задав новое доменное имя в значении данного параметра, вы обеспечите его автоматическую замену у всех пользователей подписки.
+    If your domain is blocked by the provider, and users can only connect to servers and update the subscription via VPN, this parameter is for you. By setting a new domain name in this parameter value, you ensure its automatic replacement for all subscription users.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     new-url: [url]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -333,7 +333,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     new-url: https://mynew-domain.com/3J3jrb4jfc
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #new-url https://mynew-domain.com/3J3jrb4jfc
@@ -342,17 +342,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Change Subscription Domain">
-    Изменение домена сайта без смены полного URL, сохраняя остальную часть адреса
+    Change the site domain without changing the full URL, keeping the rest of the address.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     new-domain: [domain]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -363,7 +363,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     new-domain: mynew-domain.com
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #new-domain mynew-domain.com
@@ -380,33 +380,30 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
         className="rounded-xl"
       />
     </Frame>
-    Позволяет задать дополнительную подпись, которая отображается под названием сервера вместо стандартного текста (например, "VMess", "VLESS", "Trojan").
+    Allows setting an additional caption displayed under the server name instead of the standard text (e.g., "VMess", "VLESS", "Trojan").
 
-    Максимальная длина — 30 символов.
+    - Maximum length — 30 characters.
+    - If it doesn't fit on the screen, it will be shortened with an ellipsis.
+    - Set after `title` via the `?` separator.
 
-    Если не помещается на экран, будет сокращена с троеточием.
-
-    - \
-      Задаётся после `title` через разделитель `?`.
-
-    **Примеры:**
+    **Examples:**
 
     VLESS
 
     ```
-    vless://1fb46fdc-e3e4-35d1-bd46-605d773b5762@5.5.8.9:443?encryption=none&node_id=482&headerType=none&type=tcp&security=reality&sni=booking.com&fp=chrome&pbk=YqHW8a4iAc1SZYpTrFVoOQg1F3yAdX1tWXuROZUCsEU&sid=6ba85179e30d4fc2&flow=xtls-rprx-vision&xtls=2#title?serverDescription=SGFwcCB0aGUgYmVzdA==
+    vless://1fb46fdc-e3e4-35d1-bd46-605d773b5762@5.5.8.9:443?encryption=none&node_id=482&headerType=none&type=tcp&security=reality&sni=booking.com&fp=chrome&pbk=YqHW8a4iAc1SZYpTrFVoOQg1F3yAdX1tWXuROZUCsEU[...]
     ```
 
     VMESS
 
     ```
-    vmess://eyJob3N0IjoiZWxhaG9tZWtpdGNoZW4uY29tIiwicGF0aCI6IiIsInRscyI6IiIsImFkZCI6ImVsYWhvbWVraXRjaGVuLmNvbSIsInBvcnQiOjUwMDAsImFpZCI6MCwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInBzIjoi4piB77iPIDogNTMuM0dCIiwiaWQiOiI4N2ZhN2VmMC1jM2ZjLTNiOTAtYTJkOC01OGZjYjhkZmZmMjYiLCJzZXJ2ZXJEZXNjcmlwdGlvbiI6IkhhcHAgdGhlIGJlc3QifQ==
+    vmess://eyJob3N0IjoiZWxhaG9tZWtpdGNoZW4uY29tIiwicGF0aCI6IiIsInRscyI6IiIsImFkZCI6ImVsYWhvbWVraXRjaGVuLmNvbSIsInBvcnQiOjUwMDAsImFpZCI6MCwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInBzIjoi4piB77iPIDog[...]
     ```
 
     Trojan
 
     ```
-    trojan://8GXLP3dEzm7T8wP5Jx0Ufg@199.107.164.105:443?security=tls&insecure=1&fragment=3,1,tlshello&type=ws&headerType=&path=%2F&host=quictest.burncommunity.ru&sni=quictest.burncommunity.ru&fp=chrome&alpn=http%2F1.1#title?serverDescription=SGFwcCB0aGUgYmVzdA==
+    trojan://8GXLP3dEzm7T8wP5Jx0Ufg@199.107.164.105:443?security=tls&insecure=1&fragment=3,1,tlshello&type=ws&headerType=&path=%2F&host=quictest.burncommunity.ru&sni=quictest.burncommunity.ru&fp=chrome&al[...]
     ```
 
     Socks5
@@ -448,15 +445,9 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Subscription Fragmentation and Fronting">
-    Некоторые CDN поддерживают фронтинг доменов. Это позволяет подключаться к своему сайту через сторонний домен.
+    Some CDNs support domain fronting. This allows connecting to your site through a third-party domain. For example, by specifying the connection address `visa.com` and Host header `my-domain.com`, the provider will only see a request to `visa.com`.  You can also access your domain for the server list using packet fragmentation in SNI TLSHello.  By default, fragmentation is enabled for all subscriptions. The user can add the subscription only once; on repeat attempts, if the account is not premium, the update will not be allowed.
 
-    Например, указав адрес подключения `visa.com`, а в заголовке Host — `my-domain.com`, провайдер увидит только запрос к `visa.com`.
-
-    Также вы можете обращаться к своему домену за списком серверов, используя фрагментацию пакетов в SNI TLSHello.
-
-    По умолчанию фрагментация включена для всех подписок. Пользователь может добавить подписку только один раз; при повторной попытке, если аккаунт не премиумный, обновление не будет разрешено.
-
-    #### **Схема URL c параметрами**
+    **URL Scheme with Parameters**
 
     ```
     [link]#title?[fragment]&[resolve-address]&[host]&[insecure]
@@ -464,18 +455,18 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     Fronting:
     visa.com/123#MyVPN?resolve-address=visa.com&host=mydomain.com
     
-    Frgmentation:
+    Fragmentation:
     mydomain.com/123#MyVPN?fragment=80-250,10-100,tlshello
     ```
 
-    Фрагментация содержит три параметра: `[length]`, `[interval]` и `[packets]`.
+    Fragmentation has three parameters: `[length]`, `[interval]` and `[packets]`.
 
-    При использовании фронтинга необходимо сначала указать URL с доменом, через который будет осуществляться соединение. Также требуется задать `resolve-address` — это может быть домен или IP-адрес — и `host`, соответствующий вашему хосту в сети выбранного провайдера.
+    For fronting, specify the URL with the domain used for connection first, [...]
   </Accordion>
   <Accordion title="Advanced fragmentation">
-    Данная функция пока что проходит закрытое тестирование и скоро будет доступна...
+    This feature is currently in closed testing and will be available soon...
   </Accordion>
-  <Accordion title="Auto Connect">
+  <Accordion title="Non-disableable HWID">
     По умолчанию HWID включен на всех приложениях Happ. Но если вы хотите, чтобы пользователь не мог отключить пересылку этого параметра отключив его в настройках приложения, то вы можете отправить вместе с подпиской специальный параметр.
 
     **Пример настройки данного параметра:**
@@ -505,7 +496,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Уведомление об окончании подписки">
+  <Accordion title="Subscription Expiration Notification">
     Вы можете включить функцию автоматических уведомлений о завершении подписки. Пользователь будет получать напоминания за 3 дня до окончания подписки: приложение отправит по одному уведомлению в день в течение трёх дней. Это поможет пользователю не забыть продлить подписку вовремя.
 
     Текст уведомления:
@@ -541,7 +532,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Скрыть настройки серверов в подписке">
+  <Accordion title="Hide Server Settings in Subscription">
     <Frame>
       <img
         src="/images/option.png"
@@ -579,7 +570,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Резолвинг доменов">
+  <Accordion title="Domain Resolving">
     Приложение может выполнять предварительное резолвинг доменов серверов ещё до установления подключения. Вы можете указать любой DoH-сервер, и при соединении с сервером Xray доменное имя будет заменено на полученный IP-адрес.
 
     Если для домена возвращается несколько IP-адресов, приложение автоматически выберет тот, у которого минимальное время отклика (ping). Однако стоит учитывать: при большом количестве IP-адресов подключение может занять больше времени, так как все варианты будут протестированы заранее.
@@ -619,12 +610,12 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
   </Accordion>
 </AccordionGroup>
 
-#### **Управление настройками приложения**
+#### **Application Settings Management**
 
-Необходим параметр [Provider ID](https://www.happ.su/main/ru/dev-docs/provider-id)!
+[Provider ID](https://www.happ.su/main/dev-docs/provider-id) parameter is required!
 
 <AccordionGroup>
-  <Accordion title="Автоподключение">
+  <Accordion title="Auto Connect">
     Позволяет автоматически подключать пользователя к серверам при запуске приложения. Дополнительно, с помощью параметра subscription-autoconnect можно указать критерий для подключения к определенному серверу.
 
     **Пример настройки данного параметра:**
@@ -657,7 +648,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Автопинг">
+  <Accordion title="Auto Ping">
     Запускайте автоматическое тестирование списка серверов при открытии приложения если это необходимо.
 
     **Пример настройки данного параметра:**
@@ -687,7 +678,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Автообновление подписок">
+  <Accordion title="Auto-Update Subscriptions">
     В приложении можно включать или отключать автообновление сразу для всех подписок — эта настройка применяется ко всем подпискам одновременно. Если же нужно задать автообновление только для конкретной подписки, воспользуйтесь функционалом Автообновление подписки. При отключении глобальной настройки каждая подписка самостоятельно определяет своё время обновления.
 
     **Пример настройки данного параметра:**
@@ -717,7 +708,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Фрагментация">
+  <Accordion title="Fragmentation">
     Это глобальный параметр управления фрагментацией для всех подписок. Если же нужно назначить фрагментацию только для конкретной подписки или серверу, воспользуйтесь бесплатным функционалом и инструкциями общей документации к приложению. При отключении глобальной настройки каждая подписка самостоятельно определяет настройки фрагментации.
 
     **Пример настройки данного параметра:**
@@ -774,7 +765,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     vmess://zkIAU1JitkI…
     ```
   </Accordion>
-  <Accordion title="Пинг">
+  <Accordion title="Ping">
     Эта функция позволяет выбрать способ выполнения пинга в приложении. Доступны три варианта: «via Proxy», «TCP» и «ICMP». Для режима «via Proxy» можно дополнительно указать URL для проверки пинга.
 
     **Пример настройки данного параметра:**
