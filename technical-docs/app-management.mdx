@@ -592,39 +592,11 @@ title: "Управление приложением"
     ```
   </Accordion>
 </AccordionGroup>
----
-title: "Управление приложением"
----
-
-Управляйте настройками приложения через подписку
-
-**Функционал управление приложения** включает два направления:
-
-- [Стандартные параметры](#standart) управления которые работают для большиства панелей.
-- [Расширенные параметры](#parametr) для которых необходимо указывать [Provider ID](https://www.happ.su/main/ru/dev-docs/provider-id) в подписке.
-
-Чтобы активировать параметр, передайте значение `true` или `1` ; чтобы отключить — любое другое непустое значение (например, `0` или `false`).
-
-## **Стандартные параметры** <a id="standart" />
-
-<AccordionGroup>
-  <Accordion title="Автообновление подписки">
-    <Frame>
-      <img
-        src="/images/rule.png"
-        alt="Описание картинки"
-        style={{ width:"250px",height:"auto" }}
-        className="rounded-xl"
-      />
-    </Frame>
-  </Accordion>
-</AccordionGroup>
 
 #### **Управление настройками приложения**
 
 Необходим параметр [Provider ID](https://www.happ.su/main/ru/dev-docs/provider-id)!
-
-<AccordionGroup>
+  <AccordionGroup>
   <Accordion title="Автоподключение">
     Позволяет автоматически подключать пользователя к серверам при запуске приложения. Дополнительно, с помощью параметра subscription-autoconnect можно указать критерий для подключения к определенному серверу.
 
@@ -961,8 +933,7 @@ title: "Управление приложением"
     vmess://zkIAU1JitkI…
     ```
    </Accordion>
-     
-  <AccordionGroup>
+    
   <Accordion title="Запрет сворачивания подписок">
     <Frame>
       <img
