@@ -1,7 +1,23 @@
 ---
 title: "Android TV API"
 ---
+<Columns cols={2}>
+  <Frame>
+    <img
+      className="rounded-xl"
+      src="/images/androidTV.png"
+      alt="Экран Android TV"
+    />
+  </Frame>
 
+  <Frame>
+    <img
+      className="rounded-xl"
+      src="/images/androidTV2.png"
+      alt="Экран импорта Android TV"
+    />
+  </Frame>
+</Columns>
 To transfer a subscription to a user’s TV, you need to know the 5-digit code generated when the app is first launched on the Android TV. The user can get this code by selecting the **Web Import** option in the app interface.
 
 After that, you must send a **POST** request to: `https://check.happ.su/sendtv/[uid]` where **[uid]** is the 5-digit code displayed on the TV.
