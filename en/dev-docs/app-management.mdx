@@ -467,17 +467,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     This feature is currently in closed testing and will be available soon...
   </Accordion>
   <Accordion title="Non-disableable HWID">
-    По умолчанию HWID включен на всех приложениях Happ. Но если вы хотите, чтобы пользователь не мог отключить пересылку этого параметра отключив его в настройках приложения, то вы можете отправить вместе с подпиской специальный параметр.
+    By default, HWID is enabled in all Happ apps. But if you want the user to be unable to disable the transmission of this parameter by turning it off in the app settings, you can send a special parameter with the subscription.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     subscription-always-hwid-enable: [true / 1]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -488,7 +488,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     subscription-always-hwid-enable: 1
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #subscription-always-hwid-enable: 1
@@ -497,23 +497,23 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Subscription Expiration Notification">
-    Вы можете включить функцию автоматических уведомлений о завершении подписки. Пользователь будет получать напоминания за 3 дня до окончания подписки: приложение отправит по одному уведомлению в день в течение трёх дней. Это поможет пользователю не забыть продлить подписку вовремя.
+    You can enable automatic notifications about subscription expiration. The user will receive reminders 3 days before expiration: the app will send one notification per day for three days. This helps the user not forget to renew the subscription on time.
 
-    Текст уведомления:
+    Notification text:
 
     ```
-     У вашей подписки [name] скоро истечёт срок действия, не забудьте продлить её.
+     Your subscription [name] will expire soon, don’t forget to renew it.
     ```
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     notification-subs-expire: [true / 1]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -524,7 +524,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     notification-subs-expire: 1
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #notification-subs-expire: 1
@@ -541,17 +541,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
         className="rounded-xl"
       />
     </Frame>
-    Отключите возможность просмотра и редактирования конфигураций серверов для пользователей вашей подписки. Настройка применяется как к уже добавленным подпискам, так и к тем, что будут добавлены в будущем.
+    Disable the ability to view and edit server configurations for users of your subscription. Not available for all apps.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     hide-settings: [true / 1]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -562,7 +562,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     hide-settings: 1
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #hide-settings: 1
@@ -571,11 +571,9 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Domain Resolving">
-    Приложение может выполнять предварительное резолвинг доменов серверов ещё до установления подключения. Вы можете указать любой DoH-сервер, и при соединении с сервером Xray доменное имя будет заменено на полученный IP-адрес.
+    The app can perform preliminary domain resolution for servers before establishing a connection. You can specify any DoH server, and when connecting to an Xray server, the domain name will be replaced with the received IP address. If multiple IP addresses are returned for a domain, the app will automatically select the one with the minimum response time (ping). However, note: with a large number of IP addresses, connection may take longer as all options will be pre-tested.
 
-    Если для домена возвращается несколько IP-адресов, приложение автоматически выберет тот, у которого минимальное время отклика (ping). Однако стоит учитывать: при большом количестве IP-адресов подключение может занять больше времени, так как все варианты будут протестированы заранее.
-
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     server-address-resolve-enable: [true / 1]
@@ -583,9 +581,9 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     server-address-resolve-dns-ip: [ip]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -598,7 +596,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     server-address-resolve-dns-ip: 77.88.8.8
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #server-address-resolve-enable: 1
@@ -616,18 +614,18 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
 
 <AccordionGroup>
   <Accordion title="Auto Connect">
-    Позволяет автоматически подключать пользователя к серверам при запуске приложения. Дополнительно, с помощью параметра subscription-autoconnect можно указать критерий для подключения к определенному серверу.
+    Allows automatically connecting the user to servers when launching the app. Additionally, using the **subscription-autoconnect-type** parameter, you can specify the criterion for connecting to a specific server.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     subscription-autoconnect: [true / 1]
     subscription-autoconnect-type: [“lastused“/”lowestdelay”]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -639,7 +637,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     subscription-autoconnect-type: lowestdelay
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #subscription-autoconnect: 1
@@ -649,17 +647,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Auto Ping">
-    Запускайте автоматическое тестирование списка серверов при открытии приложения если это необходимо.
+    Run automatic server list testing when opening the app if necessary.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     subscription-ping-onopen-enabled: [true / 1]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -670,7 +668,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     subscription-ping-onopen-enabled: 1
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #subscription-ping-onopen-enabled: 1
@@ -679,17 +677,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Auto-Update Subscriptions">
-    В приложении можно включать или отключать автообновление сразу для всех подписок — эта настройка применяется ко всем подпискам одновременно. Если же нужно задать автообновление только для конкретной подписки, воспользуйтесь функционалом Автообновление подписки. При отключении глобальной настройки каждая подписка самостоятельно определяет своё время обновления.
+    In the app, you can enable or disable auto-update for all subscriptions at once — this setting applies to all subscriptions simultaneously. If you need to set auto-update only for a specific subscription, use the Subscription auto-update functionality. When the global setting is disabled, each subscription independently determines its update time.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     subscription-auto-update-enable: [true / 1] 
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -700,7 +698,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     subscription-auto-update-enable: 1
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #new-url: https:/mynew-domain.com/3J3jrb4jfc
@@ -709,9 +707,9 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Fragmentation">
-    Это глобальный параметр управления фрагментацией для всех подписок. Если же нужно назначить фрагментацию только для конкретной подписки или серверу, воспользуйтесь бесплатным функционалом и инструкциями общей документации к приложению. При отключении глобальной настройки каждая подписка самостоятельно определяет настройки фрагментации.
+    This is a global fragmentation management parameter for all subscriptions. If you need to assign fragmentation only to a specific subscription or server, use the free functionality and instructions from the general app documentation. When the global setting is disabled, each subscription independently determines fragmentation settings.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     fragmentation-enable: [true / 1]
@@ -726,9 +724,9 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     noises-applyto: [ip,ipv4,ipv6]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -748,7 +746,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     noises-applyto: ipv4
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #fragmentation-enable: 1
@@ -766,18 +764,18 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Ping">
-    Эта функция позволяет выбрать способ выполнения пинга в приложении. Доступны три варианта: «via Proxy», «TCP» и «ICMP». Для режима «via Proxy» можно дополнительно указать URL для проверки пинга.
+    This function allows selecting the ping execution method in the app. Three options are available: “via Proxy”, “TCP”, and “ICMP”. For “via Proxy” mode, you can additionally specify a URL for ping checking.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     ping-type: ["proxy", "proxy-head', "tcp","icmp"]
     check-url-via-proxy: [url]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -789,7 +787,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     check-url-via-proxy: https://cp.cloudflare.com/generate_204
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #ping-type proxy
@@ -799,17 +797,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="User-Agent">
-    Эта функция позволяет изменить User-Agent, используемый в заголовках при получении подписки. Полезно в случаях, когда провайдер блокирует запросы с нестандартными или неподходящими заголовками.
+    This function allows changing the User-Agent used in headers when fetching the subscription. Useful when the provider blocks requests with non-standard or unsuitable headers.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     change-user-agent: [String] 
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -820,7 +818,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     change-user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #change-user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
@@ -829,17 +827,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="App Auto-Start">
-    Эта функция позволяет автоматически запускать приложение при включении устройства. В настоящее время доступна только на Android.
+    This function allows automatically launching the app when the device is turned on. Currently available only on Android.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     app-auto-start: [String] 
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -850,7 +848,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     app-auto-start: 1
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #app-auto-start: 1
@@ -859,17 +857,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Update Subscriptions When App Launches">
-    Эта функция автоматически обновляет все подписки в приложении при каждом открытии приложения.
+    This function automatically updates all subscriptions in the app whenever the app is opened.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     subscription-auto-update-open-enable: [String] 
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -880,7 +878,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     subscription-auto-update-open-enable: 1
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #subscription-auto-update-open-enable: 1
@@ -889,18 +887,18 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="App-specific Proxy (Android)">
-    В этом параметре можно указать список приложений, которые должны использовать VPN или, наоборот, обходить его. Если приложение ещё не установлено на устройстве, но указано в списке, оно будет автоматически учтено при первом подключении к VPN после установки.
+    This parameter allows specifying a list of apps that should use VPN or, conversely, bypass it. If an app is not yet installed on the device but is listed, it will be automatically taken into account on first VPN connection after installation.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
-    per-app-proxy-mode: [off/on/bypass] \\Укажите один из трех параметров
-    per-app-proxy-list: [com.google.chrome,com.meta.instagram] \\список appID через ','
+    per-app-proxy-mode: [off/on/bypass] \\Specify one of three parameters
+    per-app-proxy-list: [com.google.chrome,com.meta.instagram] \\list appIDs separated by ','
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -912,7 +910,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     per-app-proxy-list: com.google.chrome,com.meta.instagram
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #per-app-proxy-mode: on
@@ -922,17 +920,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Packet Analysis (Sniffing)">
-    В xray-core sniffing нужен, чтобы анализировать первые пакеты соединения и автоматически определять протокол (HTTP, TLS, BitTorrent и т.д.) и домен (SNI/Host). Может влиять на загрузку медиа в приложении WeChat. По умолчанию включен.
+    In **xray-core**, sniffing is needed to analyze the first packets of a connection and automatically determine the **protocol** (HTTP, TLS, BitTorrent, etc.) and **domain** (SNI/Host). May affect media loading in the WeChat app. Enabled by default.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     sniffing-enable: [String] 
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -943,7 +941,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     sniffing-enable: 1
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #sniffing-enable: 1
@@ -960,17 +958,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
         className="rounded-xl"
       />
     </Frame>
-    Эта функция отключает возможность сворачивать подписку: список серверов всегда отображается полностью, в развёрнутом виде.
+    This function disables the ability to collapse a subscription: the server list is always fully displayed.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     subscriptions-collapse: [false / 0]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -981,7 +979,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     subscriptions-collapse: 0
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #subscriptions-collapse: 0
@@ -998,17 +996,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
         className="rounded-xl"
       />
     </Frame>
-    Позволяет отобразить иконки вместо временных значений
+    Allows displaying icons instead of time values.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     ping-result: [time,icon]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -1019,7 +1017,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ping-result: icon
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #ping-result: icon
@@ -1028,9 +1026,9 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Mux">
-    Mux в xray-core — это функция мультиплексирования (multiplexing), которая позволяет передавать данные нескольких виртуальных TCP-соединений через одно физическое TCP-соединение. Она предназначена для снижения задержек от TCP-handshake, но не для повышения пропускной способности (может даже замедлить большие загрузки). Настраивается в outbound-конфигурации с параметрами вроде enabled и concurrency (min -1 max 1024).
+    Mux in xray-core is a multiplexing function that allows transmitting data from multiple virtual TCP connections over one physical TCP connection. It is designed to reduce delays from TCP handshakes but not to increase bandwidth (may even slow down large downloads). Configured in outbound with parameters like enabled and concurrency (min -1, max 1024).
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     mux-enable: [true / 1]
@@ -1039,9 +1037,9 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     mux-quic: [String]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -1055,7 +1053,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     mux-quic: skip
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #mux-enable: 1
@@ -1067,18 +1065,18 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Proxy / TUN Mode (Desktop only)">
-    Необходимо **использовать только один** из двух перечисленных параметров! Эти параметры определяют тип подключения при добавлении\\обновлении подписки.
+    **Use only one** of the two listed parameters! These parameters determine the connection type when adding/updating the subscription.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     proxy-enable: [true / 1]
     tun-enable: [true / 1]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -1089,7 +1087,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     proxy-enable: 1
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #proxy-enable: 1
@@ -1098,20 +1096,20 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="TUN Mode (Desktop only)">
-    Определяет какой режим будет использоваться для TUN подключения.
+    Determines which mode will be used for TUN connection.
 
-    - `system` — использует системный сетевой стек ОС. Быстро и эффективно, но зависит от корректной настройки маршрутов и файрвола .
-    - `gvisor` — пользовательский стек gVisor (userspace). Меньше зависимостей от правил ядра и конфликтов с iptables/nftables/Docker, лучше изоляция; возможен небольшой минус к производительности.
+    - `system` — Uses OS system network stack. Fast and efficient, but depends on properly set routes and firewall.
+    - `gvisor` — Userspace gVisor stack. Less dependent on kernel rules and iptables/nftables/Docker conflicts, better isolation; might have slightly lower performance.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     tun-mode: [system,gvisor]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -1122,7 +1120,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     tun-mode: gvisor
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #tun-mode: gvisor
@@ -1131,17 +1129,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Tunnel Core Selection (Desktop only)">
-    Определяет какое ядро будет использоваться для TUN подключения. Для выбора доступно [sing-box](https://github.com/SagerNet/sing-box), [tun2proxy](https://github.com/tun2proxy/tun2proxy)
+    Determines which core will be used for TUN connection. Available: [sing-box](https://github.com/SagerNet/sing-box[...])
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     tun-type: [singbox, tun2proxy]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -1152,7 +1150,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     tun-type: tun2proxy
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #tun-type: tun2proxy
@@ -1161,17 +1159,17 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     ```
   </Accordion>
   <Accordion title="Exclude routes">
-    Определяет перечень подсетей и IP-адресов, трафик которых не должен проходить через туннель. Адреса указываются в одной строке, разделяя их пробелами и запятыми.
+    Defines subnets and IP addresses whose traffic should not go through the tunnel. Addresses are specified in a single line, separated by spaces and commas.
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     exclude-routes: [String]
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -1182,7 +1180,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     exclude-routes: 192.169.1.0/24, 10.0.0.0/8
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #exclude-routes: 192.169.1.0/24, 10.0.0.0/8
@@ -1199,7 +1197,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
         className="rounded-xl"
       />
     </Frame>
-    Позволяет изменить цветовую тему на персональную. Собственную тему можно создать в редакторе — удерживайте надпись «Тема оформления» для вызова меню. Созданную тему можно экспортировать в буфер обмена, а также импортировать из буфера, из файла .happ или передать через подписку.
+    Allows you to customize the color theme to your preference. You can create your own theme in the editor — just long-press the “Appearance Theme” label to open the menu. The created theme can be exported to the clipboard, as well as imported from the clipboard, from a .happ file, or transferred through a subscription.
 
     VIOLET Theme
 
@@ -1290,16 +1288,16 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
 
     Show all 39 lines
 
-    **Пример настройки данного параметра:**
+    **Example of configuring this parameter:**
 
     ```
     color-profile: [String] //base64 or plainString
     color-profile: resetcolors // full reset
     ```
 
-    **Способы передачи:**
+    **Ways to pass it:**
 
-    Через HTTP Headers:
+    Via HTTP Headers:
 
     ```
     HTTP/2 200 
@@ -1310,7 +1308,7 @@ To enable a parameter, pass the value `true` or `1`; to disable it, pass any oth
     color-profile: {"backgroundGradientRotationAngle":37.1,"serverRowBackgroundColor":"#21003D67","subsHeaderColor":"#42296DFF","profileWebPageIconColor":"#A2B8FFFF","selectedServerRowColor":"#3E2F62B5","disclosureSubHeaderTextColor":"#C1C2E2FF","buttonTextColor":"#FFFFFFFF","buttonTimerColor":"#FFFFFFFF","subscriptionInfoBackgroundColor":"#21003CFF","backgroundColors":["#3D2A7DFF","#6557BAFF","#9377FF7F"],"disclosureHeaderTextColor":"#FFFFFFFF","backgroundGradientColorIntensity":1,"additionalOptionsButtonColor":"#FFFFFFFF","buttonImageType":"light","serverRowSubTitleTextColor":"#C1C2E2FF","supportIconColor":"#FFFFFFFF","topBarButtonsColor":"#FFFFFFFF","subscriptionTrafficBackgroundColor":"#533EA7FF","subHeaderButtonColor":"#FFFFFFFF","buttonColor":"#9377FFFF","powerIconColor":"#3D2A7DFF","subscriptionInfoTextColor":"#FFFFFFFF","serverRowTitleTextColor":"#FFFFFFFF","backgroundImageType":"system","elipseColors":["#00B460FF","#CF72FFE0","#FFDD00FF"],"serverRowChevronColor":"#FFFFFFFF"}
     ```
 
-    Через тело подписки:
+    Via subscription body:
 
     ```
     #color-profile: {"backgroundGradientRotationAngle":37.1,"serverRowBackgroundColor":"#21003D67","subsHeaderColor":"#42296DFF","profileWebPageIconColor":"#A2B8FFFF","selectedServerRowColor":"#3E2F62B5","disclosureSubHeaderTextColor":"#C1C2E2FF","buttonTextColor":"#FFFFFFFF","buttonTimerColor":"#FFFFFFFF","subscriptionInfoBackgroundColor":"#21003CFF","backgroundColors":["#3D2A7DFF","#6557BAFF","#9377FF7F"],"disclosureHeaderTextColor":"#FFFFFFFF","backgroundGradientColorIntensity":1,"additionalOptionsButtonColor":"#FFFFFFFF","buttonImageType":"light","serverRowSubTitleTextColor":"#C1C2E2FF","supportIconColor":"#FFFFFFFF","topBarButtonsColor":"#FFFFFFFF","subscriptionTrafficBackgroundColor":"#533EA7FF","subHeaderButtonColor":"#FFFFFFFF","buttonColor":"#9377FFFF","powerIconColor":"#3D2A7DFF","subscriptionInfoTextColor":"#FFFFFFFF","serverRowTitleTextColor":"#FFFFFFFF","backgroundImageType":"system","elipseColors":["#00B460FF","#CF72FFE0","#FFDD00FF"],"serverRowChevronColor":"#FFFFFFFF"}
