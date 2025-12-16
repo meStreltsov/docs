@@ -40,6 +40,8 @@
               "en/dev-docs/routing",
               "en/dev-docs/displaying-flags-and-smileys",
               "en/dev-docs/examples-of-links-and-parameters",
+              "en/dev-docs/limited-links",
+              "en/dev-docs/hwid-links",
               "en/dev-docs/android-tv-api"
             ]
           },
