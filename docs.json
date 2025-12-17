@@ -46,7 +46,7 @@
           },
           "en/contacts",
           "en/privacy-policy",
-          "en/terms-of-Services",
+          "en/terms-of-Services"
         ]
       },
       {
@@ -121,7 +121,7 @@
           },
           "zh/contacts",
           "zh/privacy-policy",
-          "zh/terms-of-use",
+          "zh/terms-of-use"
         ]
       }
     ]
