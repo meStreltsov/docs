@@ -44,9 +44,7 @@
               "en/dev-docs/android-tv-api"
             ]
           },
-          "en/contacts",
-          "en/privacy-policy",
-          "en/terms-of-Services"
+          "en/contacts"
         ]
       },
       {
@@ -84,9 +82,7 @@
               "/technical-docs/android-tv-api"
             ]
           },
-          "/contacts",
-          "/privacy-policy",
-          "/terms-of-use"
+          "/contacts"
         ]
       },
       {
@@ -119,9 +115,7 @@
               "zh/dev-docs/android-tv-api"
             ]
           },
-          "zh/contacts",
-          "zh/privacy-policy",
-          "zh/terms-of-use"
+          "zh/contacts"
         ]
       }
     ]
