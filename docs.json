@@ -53,7 +53,7 @@
         "language": "ru",
         "default": true,
         "pages": [
-          "/index",
+          "/index"
           {
             "group": "FAQ",
             "expanded": false,
