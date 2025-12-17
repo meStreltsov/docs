@@ -54,6 +54,7 @@
         "default": true,
         "pages": [
           "/index",
+          "/about",
           {
             "group": "FAQ",
             "expanded": false,
