@@ -15,9 +15,7 @@
       {
         "language": "en",
         "pages": [
-          "en/index",
-          "en/privacy-policy",
-          "en/terms-of-Services",
+          "en/index"
           {
             "group": "FAQ",
             "pages": [
@@ -46,7 +44,9 @@
               "en/dev-docs/android-tv-api"
             ]
           },
-          "en/contacts"
+          "en/contacts",
+          "en/privacy-policy",
+          "en/terms-of-Services",
         ]
       },
       {
@@ -54,8 +54,6 @@
         "default": true,
         "pages": [
           "/index",
-          "/privacy-policy",
-          "/terms-of-use",
           {
             "group": "FAQ",
             "expanded": false,
@@ -86,15 +84,15 @@
               "/technical-docs/android-tv-api"
             ]
           },
-          "/contacts"
+          "/contacts",
+          "/privacy-policy",
+          "/terms-of-use"
         ]
       },
       {
         "language": "zh",
         "pages": [
-          "zh/index",
-          "zh/privacy-policy",
-          "zh/terms-of-use",
+          "zh/index"
           {
             "group": "FAQ",
             "pages": [
@@ -121,7 +119,9 @@
               "zh/dev-docs/android-tv-api"
             ]
           },
-          "zh/contacts"
+          "zh/contacts",
+          "zh/privacy-policy",
+          "zh/terms-of-use",
         ]
       }
     ]
